@@ -101,13 +101,6 @@ export default function Footer() {
           >
             Get checklist
           </Link>
-          <Link
-            to="/admin/login"
-            className={`mt-6 block text-xs text-neutral-400 hover:text-brand`}
-            title="Staff only"
-          >
-            Admin Panel
-          </Link>
           <div className="mt-5 flex flex-wrap gap-2">
             {socials.map((social) => {
               const Icon = socialIcon[social.platform] || MessageCircle;
