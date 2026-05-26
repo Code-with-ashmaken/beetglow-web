@@ -945,39 +945,23 @@ export default function AdminPanel() {
                           placeholder="Button link"
                         />
                       </div>
-                      {slide.layout === 'dual' ? (
-                        <div className="mt-2 grid gap-2 md:grid-cols-2">
-                          <label className="rounded-lg border border-neutral-200 px-2 py-2 text-sm">
-                            Left image upload
-                            <input
-                              type="file"
-                              accept="image/jpeg,image/png,image/webp"
-                              onChange={(e) =>
-                                uploadImageToSettings(e, (data) => {
-                                  const next = [...draftSettings.sliderSlides];
-                                  next[index] = { ...next[index], leftImage: data };
-                                  updateSettings('sliderSlides', next);
-                                })
-                              }
-                              className="mt-1 block w-full text-xs"
-                            />
-                          </label>
-                          <label className="rounded-lg border border-neutral-200 px-2 py-2 text-sm">
-                            Right image upload
-                            <input
-                              type="file"
-                              accept="image/jpeg,image/png,image/webp"
-                              onChange={(e) =>
-                                uploadImageToSettings(e, (data) => {
-                                  const next = [...draftSettings.sliderSlides];
-                                  next[index] = { ...next[index], rightImage: data };
-                                  updateSettings('sliderSlides', next);
-                                })
-                              }
-                              className="mt-1 block w-full text-xs"
-                            />
-                          </label>
-                        </div>
+                     <div className="mt-2">
+              <label className="rounded-lg border border-neutral-200 p-4 block cursor-pointer hover:bg-neutral-50">
+                <span className="block text-sm font-medium text-neutral-700 mb-1">Slider Banner Image Upload</span>
+                <input
+                  type="file"
+                  accept="image/jpeg,image/png,image/webp"
+                  onChange={(e) =>
+                    uploadImageToSettings(e, (data) => {
+                      const next = [...draftSettings.sliderSlides];
+                      next[index] = { ...next[index], leftImage: data };
+                      updateSettings('sliderSlides', next);
+                    })
+                  }
+                  className="mt-1 block w-full text-xs"
+                />
+              </label>
+            </div>
                       ) : (
                         <label className="mt-2 block rounded-lg border border-neutral-200 px-2 py-2 text-sm">
                           Slide image upload
