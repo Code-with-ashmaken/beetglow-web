@@ -62,18 +62,18 @@ export default function HeroCarousel() {
             className="absolute inset-0 overflow-hidden bg-brand-dark"
           >
             {slide.layout === 'dual' ? (
-              <div className="absolute inset-0 grid grid-rows-2 md:grid-cols-2 md:grid-rows-1">
+              <div className="absolute inset-0 w-full h-full">
                 <img
                   src={slide.leftImage}
                   alt=""
-                  className="h-full max-h-[50%] w-full object-cover md:max-h-none"
+                  className="h-full w-full object-cover"
                   loading={index === 0 ? 'eager' : 'lazy'}
                   fetchPriority={index === 0 ? 'high' : 'low'}
                 />
                 <img
                   src={slide.rightImage}
                   alt=""
-                  className="h-full max-h-[50%] w-full border-t border-white/10 object-cover md:max-h-none md:border-l md:border-t-0"
+                  className="hidden"
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
               </div>
